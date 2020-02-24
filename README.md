@@ -13,8 +13,10 @@ We train 2 netwroks- one for liver segmentation and one for lesion segmentation 
 - Run lesion segmentation by running ```train/train_lesion.py.py```. Define training parameters in ```train/lesion_config.json```
 
 ### Testing
+- To test the liver segmentation model run ```
 In order to test the trained cascade you should have two trained models: liver model and lesion model.
-The generale pipeline is illustrated below:
+The general pipeline is illustrated below:
 <img src="https://github.com/MichalHek/LiverLesionSeg/blob/master/images/pipeline_detailed.PNG"  width="700"/> 
 - Generate liver crops for testing by running: ```data/generate_liver_crops_test.py``` with your trained liver model (define it in the script).
+- 
 
