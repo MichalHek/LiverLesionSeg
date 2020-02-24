@@ -4,9 +4,9 @@ import os
 from scipy import ndimage
 
 from keras.utils import Progbar
-from liverLesionSeg2.model.model_architectures import get_model_SEresnet50 as get_model
-from liverLesionSeg2.model.ConfigClass import ConfigClass
-from liverLesionSeg2.utils import utils
+from LiverLesionSeg.model.model_architectures import get_model_SEresnet50 as get_model
+from LiverLesionSeg.model.ConfigClass import ConfigClass
+from LiverLesionSeg.utils import utils
 
 src_dir = 'D:/michal/Liver Data LiTS challenge/data/LiTS_challenge/'
 orig_height, orig_width = (512, 512)

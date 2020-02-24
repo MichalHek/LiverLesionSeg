@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 from keras.utils import Progbar
-from liverLesionSeg2.utils import utils
+from LiverLesionSeg.utils import utils
 
 src_dir = 'D:/michal/Liver Data LiTS challenge/data/LiTS_challenge/'
 orig_height, orig_width = (512, 512)

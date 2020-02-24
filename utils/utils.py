@@ -7,7 +7,7 @@ from tensorflow.keras import backend as K
 import matplotlib.pyplot as plt
 from skimage.measure import label
 
-from liverLesionSeg2.model.ConfigClass import ConfigClass as Config
+from LiverLesionSeg.model.ConfigClass import ConfigClass as Config
 
 ############################################################
 #  data processing

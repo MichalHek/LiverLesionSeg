@@ -4,10 +4,10 @@ import cv2
 from keras.utils import Progbar
 from medpy import metric
 import tensorflow as tf
-from liverLesionSeg2.model.ConfigClass import ConfigClass
-from liverLesionSeg2.utils import utils
+from LiverLesionSeg.model.ConfigClass import ConfigClass
+from LiverLesionSeg.utils import utils
 ############################################################################
-from liverLesionSeg2.model.model_architectures import get_model_SEresnet50 as get_model
+from LiverLesionSeg.model.model_architectures import get_model_SEresnet50 as get_model
 ############################################################################
 DEVICE = "/gpu:0"
 

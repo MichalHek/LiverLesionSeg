@@ -5,11 +5,11 @@ The input should be liver crops generated via data/generate_liver_crops_train.py
 """
 import os
 from keras.callbacks import ModelCheckpoint, TensorBoard, LearningRateScheduler, ReduceLROnPlateau, EarlyStopping
-from liverLesionSeg2.model.ConfigClass import ConfigClass
-from liverLesionSeg2.utils.DataGenerator import myDataGenerator
-from liverLesionSeg2.utils import utils
+from LiverLesionSeg.model.ConfigClass import ConfigClass
+from LiverLesionSeg.utils.DataGenerator import myDataGenerator
+from LiverLesionSeg.utils import utils
 ######################################################################################
-from liverLesionSeg2.model.model_architectures import get_model_SEresnet50 as get_model
+from LiverLesionSeg.model.model_architectures import get_model_SEresnet50 as get_model
 ######################################################################################
 
 # Get config file
