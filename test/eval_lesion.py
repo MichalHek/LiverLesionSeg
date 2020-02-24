@@ -119,7 +119,10 @@ for i in range(num_patients):
                 seg_lesion = np.squeeze(np.argmax(pred, axis=-1))
             elif len(pred)==4:
                 pred = pred[-1]
-                seg_lesion = np.where((np.squeeze(pred) > treshold), 2, 0)
+                if Config.class_mode == 'pyrmaid':
+                    seg_lesion = np.where((np.squeeze(pred) > treshold), 2, 0)
+                elif Config.class_mode == 'liver_lesion_pyramid':
+                    seg_lesion = np.squeeze(np.argmax(pred, axis=-1))
                 print(filename, np.sum(seg_lesion == 1))
             elif Config.class_mode == 'lesion':
                 seg_lesion = np.where((np.squeeze(pred) > treshold), 2, 0)

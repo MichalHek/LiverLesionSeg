@@ -12,7 +12,7 @@ import re
 
 def main():
     data_challenge = 'D:/michal/Liver Data LiTS challenge/Testing Batch/' #  'Training Batch 2' ;  'Testing Batch'
-    output_folder = 'D:/michal/Liver Data LiTS challenge/data/LiTS_challenge2/'
+    output_folder = 'D:/michal/Liver Data LiTS challenge/data/LiTS_challenge/'
 
     load_challenge_data(data_challenge, output_folder)
 

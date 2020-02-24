@@ -342,6 +342,17 @@ def build_model(BACKBONE, Config, encoder_weights=None, freeze_encoder=False, in
     # define model
     model = Unet(BACKBONE, input_shape=Config.input_shape, classes=Config.num_classes, activation=activation, encoder_weights=encoder_weights, encoder_freeze=freeze_encoder)
 
+    if Config.class_mode == 'liver_lesion_pyramid':
+        out3 = model.layers[-1].output
+        out2 = model.get_layer('decoder_stage3_relu2').output
+        out2 = Conv2D(Config.num_classes, (1, 1), activation='sigmoid', name='pred2')(out2)
+        out1 = model.get_layer('decoder_stage2_relu2').output
+        out1 = Conv2D(Config.num_classes, (1, 1), activation='sigmoid', name='pred1')(out1)
+        out0 = model.get_layer('decoder_stage1_relu2').output
+        out0 = Conv2D(Config.num_classes, (1, 1), activation='sigmoid', name='pred0')(out0)
+
+        model = Model(inputs=[model.input], outputs=[out0, out1, out2, out3])
+
     # Compile (Training mode)
     if inference:
         return model
@@ -371,16 +382,6 @@ def build_model(BACKBONE, Config, encoder_weights=None, freeze_encoder=False, in
             return model
 
         elif Config.class_mode == 'liver_lesion_pyramid':
-            out3 = model.layers[-1].output
-            out2 = model.get_layer('decoder_stage3_relu2').output
-            out2 = Conv2D(Config.num_classes, (1, 1), activation='sigmoid', name='pred2')(out2)
-            out1 = model.get_layer('decoder_stage2_relu2').output
-            out1 = Conv2D(Config.num_classes, (1, 1), activation='sigmoid', name='pred1')(out1)
-            out0 = model.get_layer('decoder_stage1_relu2').output
-            out0 = Conv2D(Config.num_classes, (1, 1), activation='sigmoid', name='pred0')(out0)
-
-            model = Model(inputs=[model.input], outputs=[out0, out1, out2, out3])
-
             loss = {'pred0': weighted_categorical_crossentropy(Config.weights),
                     'pred1': weighted_categorical_crossentropy(Config.weights),
                     'pred2': weighted_categorical_crossentropy(Config.weights),
