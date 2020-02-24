@@ -1,0 +1,31 @@
+{
+    "data_path":"D:/michal/Liver Data LiTS challenge/data/LiTS_challenge/ct_liver_samp",
+    "labels_path":"D:/michal/Liver Data LiTS challenge/data/LiTS_challenge/seg_liver_samp",
+    "batch_size": 8,
+    "class_mode": "liver_lesion_pyramid",
+    "clip_vals": [
+        -200,
+        250
+    ],
+    "epochs": 60,
+    "es_patience": 20,
+    "img_height": 320,
+    "img_width": 320,
+    "img_z": 3,
+    "init_lr": 0.001,
+    "init_lr_finetuning" :0.0001,
+    "mean": 95,
+    "num_classes": 3,
+    "rop_factor": 0.7,
+    "rop_min_lr": 1e-08,
+    "rop_patience": 5,
+    "sd_drop": 0.1,
+    "sd_epochs_drop": 20,
+    "smooth": 1,
+    "std": 35,
+    "weights": [
+        0.0005,
+        0.05,
+        1
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "data_path":"D:/michal/Liver Data LiTS challenge/data/LiTS_challenge/ct_p",
+    "labels_path":"D:/michal/Liver Data LiTS challenge/data/LiTS_challenge/seg_p",
+    "batch_size": 6,
+    "class_mode": "liver",
+    "classes_types": {
+        "1": "cyst",
+        "2": "hemangioma",
+        "3": "metastases",
+        "4": "normal"
+    },
+    "clip_vals": [
+        -200,
+        250
+    ],
+    "epochs": 60,
+    "es_patience": 30,
+    "img_height": 384,
+    "img_width": 384,
+    "img_z": 3,
+    "init_lr": 0.0001,
+    "init_lr_finetuning" :0.00005,
+    "mean": 95,
+    "num_classes": 1,
+    "rop_factor": 0.5,
+    "rop_min_lr": 1e-08,
+    "rop_patience": 4,
+    "sd_drop": 0.5,
+    "sd_epochs_drop": 10,
+    "smooth": 1,
+    "std": 35,
+    "weights": [
+        0.05,
+        1
+    ]
+}
