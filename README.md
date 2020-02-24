@@ -8,5 +8,5 @@ Code for liver lesion segmentation using different architectures
 We train 2 netwroks- one for liver segmentation and one for lesion segmentation as illustrated below:
 <img src="https://github.com/MichalHek/LiverLesionSeg/blob/master/images/pipeline.PNG"  width="700"/> 
 - Run liver segmentation by running ```train/train_liver.py.py```. Define training parameters in ```train/liver_config.json```
-- Before training lesion segmentation- run the following script: ```LiverLesionSeg/data/generate_liver_crops_train.py``` to generate GT liver ROI crops.
-
+- Before training lesion segmentation run the following script: ```data/generate_liver_crops_train.py``` to generate GT liver ROI crops.
+- Run lesion segmentation by running ```train/train_lesion.py.py```. Define training parameters in ```train/lesion_config.json```
