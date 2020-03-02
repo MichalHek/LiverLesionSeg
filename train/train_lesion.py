@@ -90,19 +90,20 @@ Config.write_to_file(filepath=logdir+'/log_info.json', model=model_lesion, **dic
 
 # Callbacks
 # ----------
-model_callbacks = []
-# Checkpoint
-model_callbacks.append(ModelCheckpoint(logdir + '/weights.h5', monitor=monitor, save_best_only=True, mode=monitor_mode))
-# model_checkpoints.append(ModelCheckpoint(logdir + '/weights_last.h5')) # save most updated weights
-# model_checkpoints.append(ModelCheckpoint(logdir + '/weights{epoch:05d}.h5',save_weights_only=True, period=5)) # save weights every 5 epochs
-# Tensorboard
-model_callbacks.append(TensorBoard(log_dir=logdir, write_graph=True, write_images=True))
-# Reduce lr
-model_callbacks.append(LearningRateScheduler(utils.step_decay))
-# LRSchedule
-model_callbacks.append(ReduceLROnPlateau(factor=Config.rop_factor, patience=Config.rop_patience, min_lr=Config.rop_min_lr))
-# Early stop
-model_callbacks.append(EarlyStopping(monitor=monitor, patience=10, mode=monitor_mode))
+model_checkpoint = ModelCheckpoint(logdir + '/weights.h5', monitor=monitor, save_best_only=True, mode=monitor_mode)
+# model_checkpoint2 = ModelCheckpoint(logdir + '/weights_last.h5', monitor='val_loss', mode='min')
+# model_checkpoint3 = ModelCheckpoint(logdir + '/weights{epoch:05d}.h5',save_weights_only=True, period=5)) # save weights every 5 epochs
+model_tensorboard = TensorBoard(log_dir=logdir, write_graph=True, write_images=True)
+model_LRSchedule = LearningRateScheduler(utils.step_decay)
+reduce_lr = ReduceLROnPlateau(factor=Config.rop_factor, patience=Config.rop_patience, min_lr=Config.rop_min_lr)
+model_earlystop = EarlyStopping(monitor=monitor, patience=10, mode=monitor_mode)
+
+model_callbacks = [model_checkpoint,
+                   model_tensorboard,
+                   model_LRSchedule,
+                   reduce_lr,
+                   model_earlystop]
+
 
 # Train
 print('/nTraining')

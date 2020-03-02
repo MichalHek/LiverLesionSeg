@@ -1,3 +1,8 @@
+"""
+Script for evaluating liver network
+Define the model path where the model's weights are saved + liver data path (generated via data/preprocess_lits.py).
+Turn isDbg flag on to inspect results.
+"""
 import os
 import numpy as np
 import cv2
@@ -6,9 +11,9 @@ from medpy import metric
 import tensorflow as tf
 from LiverLesionSeg.model.ConfigClass import ConfigClass
 from LiverLesionSeg.utils import utils
-############################################################################
+######################################################################################
 from LiverLesionSeg.model.model_architectures import get_model_SEresnet50 as get_model
-############################################################################
+######################################################################################
 DEVICE = "/gpu:0"
 
 # Model path
@@ -28,7 +33,7 @@ weights_path = net_dir + 'weights.h5'
 results_filepath = net_dir + '/info.txt'
 
 # Dbg?
-isDbg = True
+isDbg = False
 
 if isDbg:
     dbg_step = 1 # step between images

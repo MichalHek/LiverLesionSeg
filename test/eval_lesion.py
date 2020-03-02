@@ -1,3 +1,9 @@
+"""
+Script for evaluating lesion network
+Define the model path where the model's weights are saved + liver crops path (generated via data/generate_liver_crops_train.py).
+Turn isDbg flag on to inspect results.
+"""
+
 import os
 import numpy as np
 import cv2
@@ -6,13 +12,14 @@ from medpy import metric
 import tensorflow as tf
 from LiverLesionSeg.model.ConfigClass import ConfigClass
 from LiverLesionSeg.utils import utils
-############################################################################
+######################################################################################
 from LiverLesionSeg.model.model_architectures import get_model_SEresnet50 as get_model
-############################################################################
+######################################################################################
 DEVICE = "/gpu:0"
 
 # Model path
 net_dir = '../train/logs/lesion_seg/experiment_04/'
+
 # Data paths
 data_path = 'D:/michal/Liver Data LiTS challenge/data/LiTS_challenge/ct_p_samp'
 masks_path = 'D:/michal/Liver Data LiTS challenge/data/LiTS_challenge/seg_p_samp'
@@ -28,6 +35,7 @@ weights_path = net_dir + 'weights.h5'
 # Results output log path
 results_filepath = net_dir + '/info.txt'
 results_additional_text = weights_path
+
 # Save to CSV
 csv_results_path = './lesion_seg_results.csv'
 
