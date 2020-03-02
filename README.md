@@ -27,5 +27,5 @@ The general pipeline is illustrated below:
 - Generate liver crops for testing by running: ```data/generate_liver_crops_test.py``` with your trained liver model (define it in the script).
 - Generate niftii files by running ```test/submit_results.py```. 
 - To view the results in a 3D I recommand using [ITK snap](http://www.itksnap.org/pmwiki/pmwiki.php?n=Downloads.SNAP3).
-- Zip files and submit.
+- Zip files and submit: [LiTS competition](https://competitions.codalab.org/competitions/17094#results).
 
