@@ -1,5 +1,6 @@
 # LiverLesionSeg
 Code for liver lesion segmentation using different architectures.
+
 This code was used to train the lesion segmentation network in our paper:
 [Hierarchical Fine-Tuning for joint Liver Lesion Segmentation and Lesion Classification in CT](https://arxiv.org/abs/1907.13409).
 
