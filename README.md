@@ -1,5 +1,8 @@
 # LiverLesionSeg
-Code for liver lesion segmentation using different architectures
+Code for liver lesion segmentation using different architectures.
+This code was used to train the lesion segmentation network in our paper:
+[Hierarchical Fine-Tuning for joint Liver Lesion Segmentation and Lesion Classification in CT](https://arxiv.org/abs/1907.13409).
+
 
 ### Training
 - Download the LiTS dataset from [this link](https://drive.google.com/drive/folders/0B0vscETPGI1-eE53ZnA0MGhWZFE).
@@ -21,6 +24,6 @@ The general pipeline is illustrated below:
 **To test the full cascade results (liver+lesion model):**
 - Generate liver crops for testing by running: ```data/generate_liver_crops_test.py``` with your trained liver model (define it in the script).
 - Generate niftii files by running ```test/submit_results.py```. 
-- To view the results in a 3D I recommand using [ITK snap](http://www.itksnap.org/pmwiki/pmwiki.php?n=Downloads.SNAP3)
+- To view the results in a 3D I recommand using [ITK snap](http://www.itksnap.org/pmwiki/pmwiki.php?n=Downloads.SNAP3).
 - Zip files and submit.
 
