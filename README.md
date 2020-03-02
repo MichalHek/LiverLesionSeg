@@ -13,10 +13,14 @@ We train 2 netwroks- one for liver segmentation and one for lesion segmentation 
 - Run lesion segmentation by running ```train/train_lesion.py.py```. Define training parameters in ```train/lesion_config.json```
 
 ### Testing
-- To test the liver segmentation model run ```
 In order to test the trained cascade you should have two trained models: liver model and lesion model.
 The general pipeline is illustrated below:
 <img src="https://github.com/MichalHek/LiverLesionSeg/blob/master/images/pipeline_detailed.PNG"  width="700"/> 
+- To test the liver segmentation model on the liver evaluation set run ```test/eval_liver.py```.
+- To test the lesion segmentation model on the lesion evaluation set run ```test/eval_lesion.py```.
+**To test the full cascade results (liver+lesion model):**
 - Generate liver crops for testing by running: ```data/generate_liver_crops_test.py``` with your trained liver model (define it in the script).
-- 
+- Generate niftii files by running ```test/submit_results.py```. 
+- To view the results in a 3D I recommand using [ITK snap](http://www.itksnap.org/pmwiki/pmwiki.php?n=Downloads.SNAP3)
+- Zip files and submit.
 
