@@ -22,6 +22,7 @@ The general pipeline is illustrated below:
 <img src="https://github.com/MichalHek/LiverLesionSeg/blob/master/images/pipeline_detailed.PNG"  width="700"/> 
 - To test the liver segmentation model on the liver evaluation set run ```test/eval_liver.py```.
 - To test the lesion segmentation model on the lesion evaluation set run ```test/eval_lesion.py```.
+
 **To test the full cascade results (liver+lesion model):**
 - Generate liver crops for testing by running: ```data/generate_liver_crops_test.py``` with your trained liver model (define it in the script).
 - Generate niftii files by running ```test/submit_results.py```. 
