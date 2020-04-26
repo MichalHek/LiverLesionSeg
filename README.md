@@ -19,6 +19,7 @@ We train 2 netwroks- one for liver segmentation and one for lesion segmentation 
 ### Testing
 In order to test the trained cascade you should have two trained models: liver model and lesion model.
 The general pipeline is illustrated below:
+
 <img src="https://github.com/MichalHek/LiverLesionSeg/blob/master/images/pipeline_detailed.PNG"  width="700"/> 
 
 - To test the liver segmentation model on the liver evaluation set run ```test/eval_liver.py```
